@@ -3,6 +3,7 @@ package fr.imrann.openclassroom;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class SymptomsReader {
@@ -35,7 +36,10 @@ public class SymptomsReader {
  }
 	public static void main(String[] args) {
 		SymptomsReader sr = new SymptomsReader();
-		System.out.println(sr.symptomsList("/Users/imrannjohn/Documents/Workspace-eclipse/Projet_Openclassroom/src/fr/imrann/openclassroom/symptoms.txt"));
+		ArrayList<String> ls = sr.symptomsList("/Users/imrannjohn/Documents/Workspace-eclipse/Projet_Openclassroom/src/fr/imrann/openclassroom/symptoms.txt");
+		System.out.println("Résultat avant tri: " + ls);
+		Collections.sort(ls);
+		System.out.println("Résultat après tri: " + ls);
 		
 	}
 }
