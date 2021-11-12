@@ -5,43 +5,56 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+
 public class SymptomsReader implements SymptomsArrayList {
 	
-	private String fileSymptoms;
 	
-	public String ReadSymptomsFile (String fileSymptoms) {
-		this.fileSymptoms = fileSymptoms;
-		return fileSymptoms;
-	}
+	
+	BufferedReader symptomsReader = new BufferedReader(new FileReader("/Users/imrannjohn/Documents/Workspace-eclipse/Projet_Openclassroom/src/fr/imrann/openclassroom/symptoms.txt"));
+	String line = symptomsReader.readLine();
+	
+	
+	
 
-	@Override
-	public String symptomsList() {
 		
-		ArrayList<String> symptomsList = new ArrayList<String>();
+
+	public ArrayList<String> symptomsList() {
+		
+			ArrayList<String> symptomsList = new ArrayList<String>();	
 				
 				try {
 					
-					BufferedReader readSymptomsTxt = new BufferedReader(new FileReader("/Users/imrannjohn/Documents/Workspace-eclipse/Projet_Openclassroom/src/fr/imrann/openclassroom/symptoms.txt"));
-					String line = readSymptomsTxt.readLine();
 					
+					
+				
 						if (line != null) {
-					
-							while (readSymptomsTxt != null) {
+							
 							symptomsList.add(line);
-							line = readSymptomsTxt.readLine();
-							}
-					
-							catch (IOException e) {
-							e.printStackTrace();
-							}
-						
-						}	
+							line = symptomsReader.readLine();
+							System.out.println(symptomsList());
+
 							
-				}			
-							
-	}						
-}
+						}
+				}
+				
+				catch (IOException e) {
+					e.printStackTrace();
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			
+					return symptomsList();
+				
+	}
+
+	public static void main(String args[]){
+		SymptomsReader sr = new SymptomsReader();
+
+	}
 	
+}
+
 
 	
 	

@@ -4,6 +4,6 @@ import java.util.ArrayList;
 
 public interface SymptomsArrayList  {
 	
-	String symptomsList();
+	public ArrayList<String> symptomsList();
 
 }
