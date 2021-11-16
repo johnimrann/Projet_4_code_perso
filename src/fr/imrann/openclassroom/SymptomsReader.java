@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class SymptomsReader {
 											
-	public ArrayList<String> symptomsLink(String filepath) {
+	public static ArrayList<String> symptomsLink(String filepath) {
 		ArrayList<String> symptomsList = new ArrayList<String>();
 		
 		
